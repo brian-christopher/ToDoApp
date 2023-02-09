@@ -1,0 +1,27 @@
+﻿@model List<ToDo>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a asp-action="AddTask">Agregar Tarea</a>
+<table class="table table-striped">
+    <thead> 
+       <tr>
+           <th>Contenido</th>
+           <th>Acciones</th>
+       </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var todo in Model)
+        {
+            <tr>
+                <td>@todo.Content</td> 
+                <td>
+                    <a asp-action="Edit">Editar</a>
+                    <a asp-action="Delete">Eliminar</a>
+                </td> 
+            </tr>
+        }
+    </tbody>
+</table>

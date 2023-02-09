@@ -1,0 +1,12 @@
+﻿@model ToDo
+@{
+    ViewData["Title"] = "Eliminar";
+}
+ 
+<p class="display-2">@Model.Content</p>
+
+<form method="post" asp-action="Remove">
+    <input type="hidden" asp-for="ToDoId"/>
+    <button type="submit" class="btn btn-primary">Eliminar</button>
+    <a class="btn btn-primary" asp-action="Index">Regresar</a>
+</form>

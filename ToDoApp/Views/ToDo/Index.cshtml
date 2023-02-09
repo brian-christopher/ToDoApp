@@ -1,0 +1,28 @@
+﻿@model List<ToDo>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<a asp-action="Add">Agregar Tarea</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Contenido</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var todo in Model)
+        {
+            <tr>
+                <td>@todo.Content</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@todo.ToDoId">Editar</a>
+                    <a asp-action="Remove" asp-route-id="@todo.ToDoId">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

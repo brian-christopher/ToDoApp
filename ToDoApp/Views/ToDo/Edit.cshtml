@@ -1,0 +1,17 @@
+﻿@model ToDo
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<form asp-action="Edit" method="post">
+    <div class="mb-3">
+        <label class="form-label" asp-for="Content"></label>
+        <input class="form-control" asp-for="Content"/>
+        <span class="text-danger" asp-validation-for="Content"></span>
+    </div>
+
+    <input type="hidden" asp-for="ToDoId" />
+    <button class="btn btn-primary" type="submit">Aceptar</button>
+    <a class="btn btn-primary" asp-action="Index">Regresar</a>
+</form>
+

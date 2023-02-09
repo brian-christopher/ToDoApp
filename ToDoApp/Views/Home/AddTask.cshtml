@@ -1,0 +1,16 @@
+﻿@model ToDo
+@{
+    ViewData["Title"] = "Agregar Tarea";
+}
+
+<form asp-action="AddTask" method="post"> 
+    <div class="mb-3">
+        <label class="form-label" asp-for="Content">Agregar Tarea</label>
+        <input class="form-control" asp-for="Content" />
+        <span class="text-danger" asp-validation-for="Content"></span>
+    </div>
+
+    <button class="btn btn-primary">Agregar</button>
+    <a asp-action="Index" class="btn btn-primary">Regresar</a>
+</form>
+
